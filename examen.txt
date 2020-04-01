@@ -1,0 +1,148 @@
+﻿#Garcia Espíndola Angelica Gisselle
+#Ramirez Anaya Karla Cecilia
+
+#PRIMOS
+print("P R I M O S <Generadores>")
+def primo(n):
+	if (n<2):
+		return False 
+	for x in range(2, n):
+		if n % x ==0:
+			return False
+	return True
+
+def genPrimo(LMT):
+	N=0
+	while(N<=LMT):
+		if primo(N):
+			yield N
+		N = N + 1
+a = genPrimo(10)
+z = [e for e in a]
+print(z)
+print( )
+"""
+#BADABOOM Generadores
+print("!!!B A D A  B O O M <Generadores>!!!!")
+def badaboom(n):
+	Bada = n % 3 == 0
+	Boom = n % 5 == 0
+	if Bada and Boom:
+		return "BadaBoom!"
+	elif Bada:
+		return "Bada"
+	elif Boom:
+		return "Boom"
+	else:
+		return n
+
+a = [badaboom(i+1) for i in range (20)]
+N = [e for e in a]
+print(N)
+print( )
+"""
+def badaboom(n):
+	Bada = n % 3 == 0
+	Boom = n % 5 == 0
+	if Bada and Boom:
+		return "BadaBoom!"
+	elif Bada:
+		return "Bada"
+	elif Boom:
+		return "Boom"
+	else:
+		return n
+
+def genM3M5(LMT):
+	N=0
+	while N <= LMT:
+		if badaboom(N):
+			yield badaboom(N)
+		N = N + 1
+
+a = genM3M5(20)
+N = [e for e in a]
+print(N)
+print( )
+##########################################
+#Convertir una matriz en una lista con una list comprehesion
+print("!!!!!!!!!C O M B I N A C I O N E S <Comprension de listas>!!!!!!!")
+print( )
+C = ['Camisa roja','Camisa negra','Camisa azul','Camisa morada','Camisa cafe']
+
+P = ['Pantalon negro','Pantalon azul','Pantalon cafe obscuro','Pantalon crema']
+
+A = ['cinturon','tirantes','lentes','fedora']
+
+c=[[c, p, a] for c in C for p in P for a in A]
+print(c)
+cont = len(c)
+print( )
+print("El numero de combinaciones posibles es de: ", cont)
+print( )
+
+##############################################################################
+
+print("! ! ! ! ! ! ¿ F e d o r a ?  < C o m p r e s i o n   d e   L i s t a s > ! ! ! ! ! ! ! ! ! ! ! ! ! ! ")
+print( )
+c = ['Camisa roja','Camisa negra','Camisa azul','Camisa morada','Camisa cafe']
+p = ['Pantalon negro','Pantalon azul','Pantalon cafe obscuro','Pantalon crema']
+a = ['fedora']
+
+D= [ [C,P,A] for C in c for P in p for A in a]
+print(D)
+print( )
+print("Combinaciones Disponibles",len(D))
+print( )
+##############################################################################
+print(" ! ! ! < M O N A D S > ! ! ! ")
+print("E J E R C I C I O  1")
+print("--Lacrimosa - Durch Nacht und Flut --")   
+print("Usando Monads obtenga la letra que menos se repite por cada linea y obtenga la probabilidad de sacar dicha letra")
+print( )
+def imprimirMatriz(M):
+	if M:
+		print(M[0])
+		r=M[1:]
+		imprimirMatriz(r)
+
+canciones=[
+		["Die Suche endet jetzt und hier"],
+		["Gestein kalt und nass"],
+		["Granit in Deiner Brust"],
+		["Der Stein der Dich zerdrückt"],
+		["Der Fels der Dich umgibt"],
+		["Aus dem gehauen Du doch bist"],
+		["Despiertate te busco"],
+		["Mi corazon abreté te libro"],
+		["Elevate mi luz y prende mi llama"],
+		["Si a ti, yo se, te encontrare"]
+]
+
+imprimirMatriz(canciones)
+
+####################################################
+from functools import reduce
+
+print( )
+print("< ! ! ! M O N A D S ! ! ! >")
+print("E J E R C I C I O 2")
+print("--Hole in my soul apocalyptica--")
+print("Usando Monads obtenga la letra que menos se repite de todo el fragmento y obtenga la probabilidad de sacar dicha letra")
+print( )
+
+def contar(entrada):
+	cancion={}
+	print(entrada)
+	print( )
+	for letra in entrada:
+		if letra in cancion:
+			cancion[letra]=cancion[letra]+1
+		else:
+			cancion[letra]=1
+	print(cancion)
+
+entrada = ("There's a hole in my heart, in my life, in my way And it's filled with regret and all I did, to push you away If there's still a place in your life, in your heart for me I would do anything, so don't ask me to leave I've got a hole in my soul where you use to be You're the thorn in my heart and you're killing me I wish I could go back and do it all differently I wish that I'd treated you differently 'Cause now there's a hole in my soul where you use to be")
+Z = contar(entrada)
+print(Z)
+##############################################################################
