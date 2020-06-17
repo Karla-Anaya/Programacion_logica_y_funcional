@@ -19,29 +19,29 @@ def entrevista():
 	R11 = input(" WebServices : ")
 	R12 = input(" MicroServicios : ")
 	Experiencia = set()
-	if R1 == 1:
+	if R1 == "1":
 		Experiencia.add("Oracle")
-	if R2 == 1:
+	if R2 == "1":
 		Experiencia.add("SQL/PL")
-	if R3 == 1:
+	if R3 == "1":
 		Experiencia.add("Linux")
-	if R4 == 1:
+	if R4 == "1":
 		Experiencia.add("Unix")
-	if R5 == 1:
+	if R5 == "1":
 		Experiencia.add("Shell")
-	if R6 == 1:
+	if R6 == "1":
 		Experiencia.add("C++")
-	if R7 == 1:
+	if R7 == "1":
 		Experiencia.add("Proc*C")
-	if R8 == 1:
+	if R8 == "1":
 		Experiencia.add("TuxedoV12")
-	if R9 == 1:
+	if R9 == "1":
 		Experiencia.add("VB6")
-	if R10 == 1:
+	if R10 == "1":
 		Experiencia.add("Java")
-	if R11 == 1:
+	if R11 == "1":
 		Experiencia.add("WebServices")
-	if R12 == 1:
+	if R12 == "1":
 		Experiencia.add("MicroServicios")
 	print ("Experiencia del usuario",Experiencia)
 	print ("Habilidades faltantes: ",Requisitos - Experiencia)
@@ -51,4 +51,3 @@ def entrevista():
 		return "NO ESTAS CAPACITADO PARA EL TRABAJO"
 
 print(entrevista())
-
